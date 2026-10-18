@@ -10,8 +10,7 @@ export const PERSON = {
     instagramHandle: '@theanastacia_c',
     instagram2: 'https://www.instagram.com/chinelo_n',
     instagram2Handle: '@chinelo_n',
-    // TODO: replace with her exact LinkedIn profile URL
-    linkedin: 'https://www.linkedin.com/in/anastacia-nebeolisa',
+    linkedin: 'https://www.linkedin.com/in/anastacia-nebeolisa-mba-mcib-acib-61939166',
   },
   // Month is 1-12. 19 Oct.
   birthday: { month: 10, day: 19 },
