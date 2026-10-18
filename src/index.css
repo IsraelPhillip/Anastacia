@@ -336,3 +336,10 @@ html, body { overflow-x: clip; max-width: 100%; }
   .nav { padding-inline: 1rem; }
   .footer, .about, .journey, .contact, .brand, .expertise { overflow-x: clip; }
 }
+
+/* brand photo: round, centred, no card */
+.brand-media { margin-inline: auto; width: min(100%, 28rem); }
+.tilt { aspect-ratio: 1; border-radius: 50%; background: transparent; border: 0; box-shadow: 0 40px 90px -35px rgba(0, 0, 0, .55); }
+.tilt img { width: 100%; height: 100%; border-radius: 50%; }
+.badge { left: 2%; bottom: 4%; }
+@media (max-width: 1000px) { .badge { left: 2%; } }
