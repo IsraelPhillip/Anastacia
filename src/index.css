@@ -273,7 +273,7 @@ input:focus, textarea:focus { border-color: var(--gold); }
 .foot-r a:hover { color: var(--gold); }
 
 /* birthday */
-.eve { position: fixed; z-index: 98; top: 4.7rem; left: 50%; translate: -50% 0; display: flex; gap: 1rem; align-items: center; padding: .55rem 1.2rem; border-radius: 99px; background: var(--gold); color: var(--btn-fg); font-size: .82rem; font-weight: 600; box-shadow: 0 12px 40px -10px var(--gold); white-space: nowrap; }
+.eve { position: absolute; z-index: 98; top: 4.7rem; left: 50%; translate: -50% 0; display: flex; gap: 1rem; align-items: center; padding: .55rem 1.2rem; border-radius: 99px; background: var(--gold); color: var(--btn-fg); font-size: .82rem; font-weight: 600; box-shadow: 0 12px 40px -10px var(--gold); white-space: nowrap; }
 .eve b { font-variant-numeric: tabular-nums; font-family: var(--serif); font-size: 1.05rem; padding-left: 1rem; border-left: 1px solid color-mix(in srgb, var(--btn-fg) 40%, transparent); }
 .gift { position: fixed; z-index: 98; right: var(--gutter); bottom: 1.6rem; display: flex; align-items: center; gap: .6rem; padding: .85rem 1.3rem; border-radius: 99px; background: var(--gold); color: var(--btn-fg); font-weight: 700; font-size: .88rem; box-shadow: 0 14px 44px -10px var(--gold); animation: bob 2.6s ease-in-out infinite; }
 @keyframes bob { 50% { translate: 0 -6px; } }
@@ -325,4 +325,14 @@ input:focus, textarea:focus { border-color: var(--gold); }
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* no sideways scroll on phones */
+html, body { overflow-x: clip; max-width: 100%; }
+@media (max-width: 640px) {
+  .hero-first { font-size: clamp(4rem, 21vw, 9rem); top: 0; }
+  .arch-ring { inset: -2% -4% 0; width: 108%; }
+  .hero-last { font-size: clamp(2.6rem, 14vw, 5rem); }
+  .nav { padding-inline: 1rem; }
+  .footer, .about, .journey, .contact, .brand, .expertise { overflow-x: clip; }
 }

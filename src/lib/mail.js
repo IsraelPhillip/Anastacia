@@ -1,19 +1,24 @@
 import { PERSON } from '../config'
 
-// FormSubmit relays JSON posts straight to her inbox — no backend needed.
-// First ever submission sends her an activation email she must confirm once.
-// Override with VITE_FORM_ENDPOINT (e.g. a Web3Forms / own API URL) in .env.
-const ENDPOINT = import.meta.env.VITE_FORM_ENDPOINT || `https://formsubmit.co/ajax/${PERSON.email}`
+// 1) /api/contact  — Vercel function that sends through Gmail SMTP (no activation step).
+// 2) FormSubmit    — fallback when the function isn't configured (needs one-time activation by the recipient).
+const FALLBACK = import.meta.env.VITE_FORM_ENDPOINT || `https://formsubmit.co/ajax/${PERSON.email}`
 
-export async function sendMail(fields) {
-  const res = await fetch(ENDPOINT, {
+async function post(url, body) {
+  const res = await fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify({ _template: 'table', _captcha: 'false', ...fields }),
+    body: JSON.stringify(body),
   })
   const data = await res.json().catch(() => ({}))
-  if (!res.ok || data.success === 'false' || data.success === false) {
-    throw new Error(data.message || 'Message could not be sent')
-  }
+  if (!res.ok || data.success === 'false' || data.success === false) throw new Error(data.message || 'Message could not be sent')
   return data
+}
+
+export async function sendMail(fields) {
+  try {
+    return await post('/api/contact', fields)
+  } catch {
+    return post(FALLBACK, { _template: 'table', _captcha: 'false', ...fields })
+  }
 }
