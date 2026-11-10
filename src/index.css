@@ -343,3 +343,4 @@ html, body { overflow-x: clip; max-width: 100%; }
 .tilt img { width: 100%; height: 100%; border-radius: 50%; }
 .badge { left: 2%; bottom: 4%; }
 @media (max-width: 1000px) { .badge { left: 2%; } }
+.creds { grid-template-columns: repeat(2, 1fr); }

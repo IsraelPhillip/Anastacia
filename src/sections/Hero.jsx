@@ -38,7 +38,7 @@ export default function Hero({ loaded, bday }) {
 
       <motion.div className="hero-stage" style={{ opacity: fade }}>
         <motion.h1 className="hero-first" style={{ y: firstY }} aria-label={PERSON.name}>
-          <Letters text="Anastacia" go={loaded} base={0.3} />
+          <Letters text="Nebeolisa" go={loaded} base={0.3} />
         </motion.h1>
 
         <div className="arch-wrap">
@@ -60,7 +60,7 @@ export default function Hero({ loaded, bday }) {
         </div>
 
         <motion.h1 className="hero-last" style={{ y: lastY }} aria-hidden="true">
-          <Letters text="NEBEOLISA" go={loaded} base={0.6} />
+          <Letters text="ANASTACIA" go={loaded} base={0.6} />
         </motion.h1>
       </motion.div>
 

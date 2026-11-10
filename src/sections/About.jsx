@@ -42,7 +42,8 @@ export default function About() {
           <SplitWords as="h2" className="h2" text="Capital with a conscience. Influence with purpose." />
           <ScrollWords className="lead" text={BIO} />
           <Fade delay={0.1} className="creds">
-            <div><b>MBA</b><span>Rome Business School</span></div>
+            <div><b>MBA</b><span>Ahmadu Bello University</span></div>
+            <div><b>MSc</b><span>Rome Business School</span></div>
             <div><b>MCIB</b><span>Member, Chartered Institute of Bankers</span></div>
             <div><b>ACIB</b><span>Associate, Chartered Institute of Bankers</span></div>
           </Fade>

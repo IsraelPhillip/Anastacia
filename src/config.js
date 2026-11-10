@@ -4,7 +4,7 @@ export const PERSON = {
   first: 'Anastacia',
   last: 'Nebeolisa',
   email: 'anastacianebeolisa@gmail.com',
-  postnominals: 'MBA · MCIB · ACIB',
+  postnominals: 'MBA · MSc · MCIB · ACIB',
   socials: {
     instagram: 'https://www.instagram.com/theanastacia_c',
     instagramHandle: '@theanastacia_c',
